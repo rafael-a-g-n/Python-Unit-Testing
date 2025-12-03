@@ -3,7 +3,7 @@ Unit tests for the 'square' and 'double' functions imported from mymodule.
 This module uses the built-in 'unittest' framework.
 """
 import unittest
-from mymodule import square, double
+from mymodule import square, double, add
 
 
 class TestSquare(unittest.TestCase):
@@ -41,6 +41,36 @@ class TestDouble(unittest.TestCase):
 
         self.assertEqual(double(0), 0,
                          "Expected double(0) to be 0.")  # Test for 0.
+
+
+class TestAdd(unittest.TestCase):
+    """Test suite for the add function."""  # Test suite for add.
+
+    def test_add_values(self):
+        """Tests 'add' with positive, negative, and zero inputs."""
+
+        self.assertEqual(add(2, 4), 6,
+                         "Expected add(2, 4) to be 6.")  # Test for 2 and 4.
+
+        self.assertEqual(add(2.3, 3.6), 5.9,
+                         "Expected add(2.3, 3.6) to be 5.9.")  # Test floats.
+
+        self.assertEqual(add(0, 0), 0,
+                         "Expected add(0, 0) to be 0.")  # Test for 0 and 0.
+
+        self.assertEqual(add('hello', 'world'), 'helloworld',
+                         "Expected add('hello', 'world') to be 'helloworld'."
+                         )  # String concat.
+
+        self.assertEqual(add(2.3000, 4.3000), 6.6,
+                         "Expected add(2.3000, 4.3000) to be 6.6."
+                         )  # Float addition.
+
+        self.assertNotEqual(
+            add(-2, -2),
+            0,
+            "Expected add(-2, -2) not 0 (should be -4)."
+        )  # Negative nums.
 
 
 # Run all the test cases defined in the module when the script is executed.

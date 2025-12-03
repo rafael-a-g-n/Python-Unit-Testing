@@ -13,3 +13,10 @@ def double(number):
     This function returns twice the value of a given number
     """
     return number * 2
+
+
+def add(number1, number2):
+    """
+    This function returns the sum of two numbers
+    """
+    return number1 + number2
