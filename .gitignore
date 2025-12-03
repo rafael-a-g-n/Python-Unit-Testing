@@ -1,0 +1,29 @@
+# Byte-code files
+*.pyc
+*.pyo
+__pycache__/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.eggs
+
+# Editors
+.vscode/
+.idea/
+
+# Virtual environment
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Miscellaneous
+*.log
+*.backup
+.DS_Store
